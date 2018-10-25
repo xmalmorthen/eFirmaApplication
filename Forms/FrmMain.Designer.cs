@@ -31,6 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.metroToolTip = new MetroFramework.Components.MetroToolTip();
+            this.btnCancel = new MetroFramework.Controls.MetroButton();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.btnKey = new MetroFramework.Controls.MetroButton();
+            this.btnCer = new MetroFramework.Controls.MetroButton();
+            this.btnAccept = new MetroFramework.Controls.MetroButton();
             this.msmMain = new MetroFramework.Components.MetroStyleManager(this.components);
             this.oFDCer = new System.Windows.Forms.OpenFileDialog();
             this.oFDKey = new System.Windows.Forms.OpenFileDialog();
@@ -40,6 +45,8 @@
             this.txtCer = new MetroFramework.Controls.MetroTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.mpInfo = new MetroFramework.Controls.MetroPanel();
             this.mlEstatusSAT = new MetroFramework.Controls.MetroLabel();
@@ -54,15 +61,8 @@
             this.metroProgressSpinner3 = new MetroFramework.Controls.MetroProgressSpinner();
             this.mlProccInfo = new MetroFramework.Controls.MetroLabel();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
-            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.bkgndValidate = new System.ComponentModel.BackgroundWorker();
-            this.btnCancel = new MetroFramework.Controls.MetroButton();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnKey = new MetroFramework.Controls.MetroButton();
-            this.btnCer = new MetroFramework.Controls.MetroButton();
-            this.btnAccept = new MetroFramework.Controls.MetroButton();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.bkgndSign = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.msmMain)).BeginInit();
@@ -79,6 +79,79 @@
             this.metroToolTip.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroToolTip.StyleManager = null;
             this.metroToolTip.Theme = MetroFramework.MetroThemeStyle.Light;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancel.AutoSize = true;
+            this.btnCancel.BackgroundImage = global::eFirmaApplication.Properties.Resources._1474935786_multiply;
+            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.Location = new System.Drawing.Point(705, 11);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(30, 30);
+            this.btnCancel.TabIndex = 6;
+            this.metroToolTip.SetToolTip(this.btnCancel, "Cerrar");
+            this.btnCancel.UseSelectable = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // metroButton1
+            // 
+            this.metroButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroButton1.AutoSize = true;
+            this.metroButton1.BackgroundImage = global::eFirmaApplication.Properties.Resources._1474935786_multiply;
+            this.metroButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.metroButton1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.metroButton1.Location = new System.Drawing.Point(6, 11);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(30, 30);
+            this.metroButton1.TabIndex = 63;
+            this.metroToolTip.SetToolTip(this.metroButton1, "Cerrar");
+            this.metroButton1.UseSelectable = true;
+            this.metroButton1.Visible = false;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            // 
+            // btnKey
+            // 
+            this.btnKey.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnKey.AutoSize = true;
+            this.btnKey.BackgroundImage = global::eFirmaApplication.Properties.Resources.if_ic_folder_48px_352374;
+            this.btnKey.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnKey.Location = new System.Drawing.Point(683, 79);
+            this.btnKey.Name = "btnKey";
+            this.btnKey.Size = new System.Drawing.Size(30, 30);
+            this.btnKey.TabIndex = 3;
+            this.metroToolTip.SetToolTip(this.btnKey, "Seleccionar llave privada");
+            this.btnKey.UseSelectable = true;
+            this.btnKey.Click += new System.EventHandler(this.btnKey_Click);
+            // 
+            // btnCer
+            // 
+            this.btnCer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCer.AutoSize = true;
+            this.btnCer.BackgroundImage = global::eFirmaApplication.Properties.Resources.if_ic_folder_48px_352374;
+            this.btnCer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnCer.Location = new System.Drawing.Point(683, 23);
+            this.btnCer.Name = "btnCer";
+            this.btnCer.Size = new System.Drawing.Size(30, 30);
+            this.btnCer.TabIndex = 1;
+            this.metroToolTip.SetToolTip(this.btnCer, "Seleccionar certificado público");
+            this.btnCer.UseSelectable = true;
+            this.btnCer.Click += new System.EventHandler(this.btnCer_Click);
+            // 
+            // btnAccept
+            // 
+            this.btnAccept.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAccept.AutoSize = true;
+            this.btnAccept.BackgroundImage = global::eFirmaApplication.Properties.Resources._1475261875_autograf;
+            this.btnAccept.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnAccept.Location = new System.Drawing.Point(601, 132);
+            this.btnAccept.Name = "btnAccept";
+            this.btnAccept.Size = new System.Drawing.Size(112, 105);
+            this.btnAccept.TabIndex = 5;
+            this.metroToolTip.SetToolTip(this.btnAccept, "Firmar");
+            this.btnAccept.UseSelectable = true;
+            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
             // 
             // msmMain
             // 
@@ -233,6 +306,24 @@
             this.shapeContainer1.Size = new System.Drawing.Size(722, 440);
             this.shapeContainer1.TabIndex = 44;
             this.shapeContainer1.TabStop = false;
+            // 
+            // lineShape3
+            // 
+            this.lineShape3.BorderColor = System.Drawing.Color.Gray;
+            this.lineShape3.Name = "lineShape3";
+            this.lineShape3.X1 = 64;
+            this.lineShape3.X2 = 659;
+            this.lineShape3.Y1 = 188;
+            this.lineShape3.Y2 = 188;
+            // 
+            // lineShape2
+            // 
+            this.lineShape2.BorderColor = System.Drawing.Color.Gray;
+            this.lineShape2.Name = "lineShape2";
+            this.lineShape2.X1 = 3;
+            this.lineShape2.X2 = 598;
+            this.lineShape2.Y1 = 84;
+            this.lineShape2.Y2 = 84;
             // 
             // lineShape1
             // 
@@ -432,58 +523,10 @@
             this.metroLabel6.TabIndex = 61;
             this.metroLabel6.Text = "Información del titular del certificado";
             // 
-            // lineShape2
-            // 
-            this.lineShape2.BorderColor = System.Drawing.Color.Gray;
-            this.lineShape2.Name = "lineShape2";
-            this.lineShape2.X1 = 3;
-            this.lineShape2.X2 = 598;
-            this.lineShape2.Y1 = 84;
-            this.lineShape2.Y2 = 84;
-            // 
-            // lineShape3
-            // 
-            this.lineShape3.BorderColor = System.Drawing.Color.Gray;
-            this.lineShape3.Name = "lineShape3";
-            this.lineShape3.X1 = 64;
-            this.lineShape3.X2 = 659;
-            this.lineShape3.Y1 = 188;
-            this.lineShape3.Y2 = 188;
-            // 
             // bkgndValidate
             // 
             this.bkgndValidate.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bkgndValidate_DoWork);
             this.bkgndValidate.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bkgndValidate_RunWorkerCompleted);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancel.AutoSize = true;
-            this.btnCancel.BackgroundImage = global::eFirmaApplication.Properties.Resources._1474935786_multiply;
-            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(705, 11);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(30, 30);
-            this.btnCancel.TabIndex = 6;
-            this.metroToolTip.SetToolTip(this.btnCancel, "Cerrar");
-            this.btnCancel.UseSelectable = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // metroButton1
-            // 
-            this.metroButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroButton1.AutoSize = true;
-            this.metroButton1.BackgroundImage = global::eFirmaApplication.Properties.Resources._1474935786_multiply;
-            this.metroButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.metroButton1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.metroButton1.Location = new System.Drawing.Point(462, 51);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(30, 30);
-            this.metroButton1.TabIndex = 63;
-            this.metroToolTip.SetToolTip(this.metroButton1, "Cerrar");
-            this.metroButton1.UseSelectable = true;
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // pictureBox1
             // 
@@ -495,48 +538,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 62;
             this.pictureBox1.TabStop = false;
-            // 
-            // btnKey
-            // 
-            this.btnKey.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnKey.AutoSize = true;
-            this.btnKey.BackgroundImage = global::eFirmaApplication.Properties.Resources.if_ic_folder_48px_352374;
-            this.btnKey.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnKey.Location = new System.Drawing.Point(683, 79);
-            this.btnKey.Name = "btnKey";
-            this.btnKey.Size = new System.Drawing.Size(30, 30);
-            this.btnKey.TabIndex = 3;
-            this.metroToolTip.SetToolTip(this.btnKey, "Seleccionar llave privada");
-            this.btnKey.UseSelectable = true;
-            this.btnKey.Click += new System.EventHandler(this.btnKey_Click);
-            // 
-            // btnCer
-            // 
-            this.btnCer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCer.AutoSize = true;
-            this.btnCer.BackgroundImage = global::eFirmaApplication.Properties.Resources.if_ic_folder_48px_352374;
-            this.btnCer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnCer.Location = new System.Drawing.Point(683, 23);
-            this.btnCer.Name = "btnCer";
-            this.btnCer.Size = new System.Drawing.Size(30, 30);
-            this.btnCer.TabIndex = 1;
-            this.metroToolTip.SetToolTip(this.btnCer, "Seleccionar certificado público");
-            this.btnCer.UseSelectable = true;
-            this.btnCer.Click += new System.EventHandler(this.btnCer_Click);
-            // 
-            // btnAccept
-            // 
-            this.btnAccept.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAccept.AutoSize = true;
-            this.btnAccept.BackgroundImage = global::eFirmaApplication.Properties.Resources._1475261875_autograf;
-            this.btnAccept.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnAccept.Location = new System.Drawing.Point(601, 132);
-            this.btnAccept.Name = "btnAccept";
-            this.btnAccept.Size = new System.Drawing.Size(112, 105);
-            this.btnAccept.TabIndex = 5;
-            this.metroToolTip.SetToolTip(this.btnAccept, "Firmar");
-            this.btnAccept.UseSelectable = true;
-            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
             // 
             // pictureBox2
             // 
