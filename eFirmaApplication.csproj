@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A036AC15-95B7-4C88-9874-5F067F5B9B49}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>eFirmaApplication</RootNamespace>
+    <AssemblyName>eFirmaApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="eFirma">
+      <HintPath>e.Firma.Library\eFirma.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\e.Firma.Tools\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\e.Firma.Tools\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\e.Firma.Tools\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Actions\signAction.cs" />
+    <Compile Include="Classes\frm.cs" />
+    <Compile Include="Classes\pathFolders.cs" />
+    <Compile Include="Classes\visualStyles.cs" />
+    <Compile Include="Forms\FrmEvidence.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmEvidence.Designer.cs">
+      <DependentUpon>FrmEvidence.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\FrmEvidence.resx">
+      <DependentUpon>FrmEvidence.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1473814142_certificate.fw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1473814142_certificate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1473817005_Safety01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1473820113_eye_preview_see_seen_view.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1474669874_cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1474673763_lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1474674428_ok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1474674663_View_Details.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1474674801_cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1474674863_ok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1474932413_icon-137-document-certificate.fw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1474932413_icon-137-document-certificate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1474935550_services.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1474935668_info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1474935741_change_user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1474935786_multiply.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1474936042_change_user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1474936079_multiply.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1474936121_logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1474936254_logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1475013981_high_importance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1475013985_delete_shield.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1475013989_approval.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1475013993_guestion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1475014487_guest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1475015120_user_shield.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1475023375_edit_property.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1475023455_edit_property.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1475107643_refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1475107674_refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1475188691_show_property.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1475188697_show_property.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1475261875_autograf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1475261917_autograf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1481590944_ic_beenhere_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1481591215_ic_info_outline_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1481591558_ic_cloud_download_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1481591609_ic_cloud_download_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1484695411_ic_delete_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1484695461_ic_delete_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1490838624_ic_save_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1490838660_ic_save_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1490999651_ic_find_in_page_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hexloader2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icsic-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lineaTricolor.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoGobierno.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoGobiernoLineaTricolor.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_ic_folder_48px_352374.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
