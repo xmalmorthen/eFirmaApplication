@@ -43,6 +43,7 @@ namespace eFirmaApplication
 
         private Boolean FrmError = false;
 
+        private pubCert certInfo { get; set; }
         private Boolean validaForm()
         {
             Boolean returnResponse = true;
@@ -69,6 +70,14 @@ namespace eFirmaApplication
 
             if (!returnResponse || this.FrmError)
                 MetroMessageBox.Show(this, "No es posible firmar." + Environment.NewLine + "Faltan datos requeridos o los datos no son correctos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else if (this.certInfo != null) {
+                if (this.certInfo.OCSPStatus != OCSP.Status.Aceptado) {
+                    MetroMessageBox.Show(this, "No es posible firmar." + Environment.NewLine + string.Format("El certificado se encuentra en estatus [ {0} ] ante el SAT.",this.certInfo.OCSPStatus.ToString().ToUpper()), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    returnResponse = false;
+                }
+            }
+
+            
             
             return returnResponse;
         }
@@ -154,6 +163,8 @@ namespace eFirmaApplication
                     throw e.Error;
 
                 pubCert pubCertInfo = (pubCert)e.Result;
+                
+                this.certInfo = pubCertInfo;
 
                 mlTitular.Text = pubCertInfo.getCNTitular;
                 mlCurpRFC.Text = string.Format("{0} - {1}", pubCertInfo.getSerialNumberTitular, pubCertInfo.getCNRFC);
@@ -179,7 +190,7 @@ namespace eFirmaApplication
         private void metroButton1_Click(object sender, EventArgs e)
         {
             this.txtCer.Text = @"E:\CertsStore\productivo\FIEL_RUAM8111232S9_20180829104552\ruam8111232s9.cer";
-            this.txtKey.Text = @"E:\CertsStore\productivo\FIEL_RUAM8111232S9_20180829104552\Claveprivada_FIEL_RUAM8111232S9_20180829_104552.key";
+            this.txtKey.Text = @"E:\CertsStore\productivo\FIEL_SASJ781209U9A_20140905111749\Claveprivada_FIEL_SASJ781209U9A_20140905_111749.key";
         }
 
         private void bkgndSign_DoWork(object sender, DoWorkEventArgs e)

@@ -108,7 +108,6 @@
             this.metroButton1.TabIndex = 63;
             this.metroToolTip.SetToolTip(this.metroButton1, "Cerrar");
             this.metroButton1.UseSelectable = true;
-            this.metroButton1.Visible = false;
             this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // btnKey
@@ -202,7 +201,6 @@
             this.txtKey.SelectedText = "";
             this.txtKey.SelectionLength = 0;
             this.txtKey.SelectionStart = 0;
-            this.txtKey.ShortcutsEnabled = true;
             this.txtKey.Size = new System.Drawing.Size(657, 30);
             this.txtKey.Style = MetroFramework.MetroColorStyle.Black;
             this.txtKey.TabIndex = 2;
@@ -238,7 +236,6 @@
             this.txtPwd.SelectedText = "";
             this.txtPwd.SelectionLength = 0;
             this.txtPwd.SelectionStart = 0;
-            this.txtPwd.ShortcutsEnabled = true;
             this.txtPwd.Size = new System.Drawing.Size(568, 30);
             this.txtPwd.Style = MetroFramework.MetroColorStyle.Black;
             this.txtPwd.TabIndex = 4;
@@ -274,7 +271,6 @@
             this.txtCer.SelectedText = "";
             this.txtCer.SelectionLength = 0;
             this.txtCer.SelectionStart = 0;
-            this.txtCer.ShortcutsEnabled = true;
             this.txtCer.Size = new System.Drawing.Size(656, 30);
             this.txtCer.Style = MetroFramework.MetroColorStyle.Black;
             this.txtCer.TabIndex = 0;
