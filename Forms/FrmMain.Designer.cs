@@ -108,6 +108,7 @@
             this.metroButton1.TabIndex = 63;
             this.metroToolTip.SetToolTip(this.metroButton1, "Cerrar");
             this.metroButton1.UseSelectable = true;
+            this.metroButton1.Visible = false;
             this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // btnKey
