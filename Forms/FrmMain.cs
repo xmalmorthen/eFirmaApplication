@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -187,16 +188,17 @@ namespace eFirmaApplication
             this.Refresh(); //Refrescado de pantalla para que se sigan visualizando las lineas, BUG
         }
 
-        private void metroButton1_Click(object sender, EventArgs e)
-        {
-            this.txtCer.Text = @"E:\CertsStore\productivo\FIEL_RUAM8111232S9_20180829104552\ruam8111232s9.cer";
-            this.txtKey.Text = @"E:\CertsStore\productivo\FIEL_SASJ781209U9A_20140905111749\Claveprivada_FIEL_SASJ781209U9A_20140905_111749.key";
-        }
-
         private void bkgndSign_DoWork(object sender, DoWorkEventArgs e)
         {
             originalStringToSignModel modelToSign = (originalStringToSignModel)e.Argument;
-            evidence Evidence = signAction.Sign(txtCer.Text, txtKey.Text, txtPwd.Text, modelToSign);
+
+            byte[] cer = File.ReadAllBytes(this.txtCer.Text),
+                   key = File.ReadAllBytes(this.txtKey.Text);
+
+            //evidence Evidence = signAction.Sign(txtCer.Text, txtKey.Text, txtPwd.Text, modelToSign);
+            
+            evidence Evidence = signAction.Sign(cer,key, txtPwd.Text, modelToSign);
+
             e.Result = Evidence;
         }
 
