@@ -19,28 +19,28 @@ namespace eFirmaApplication.Actions
         internal static evidence Sign(String cert, String key, String pwd, originalStringToSignModel os)
         {
             
-            eFirma.sign Sign = new eFirma.sign(cert, key, pwd);            
-            return Sign.data(os);
+            eFirma.sign Sign = new eFirma.sign();
+            return Sign.data(cert, key, pwd,os);
         }
 
         internal static evidence Sign(String cert, String key, String pwd, string os)
         {
-            eFirma.sign Sign = new eFirma.sign(cert, key, pwd);
-            return Sign.data(os);
+            eFirma.sign Sign = new eFirma.sign();
+            return Sign.data(cert, key, pwd, os);
         }
 
 
         internal static evidence Sign(byte[] cert, byte[] key, String pwd, originalStringToSignModel os)
         {
 
-            eFirma.sign Sign = new eFirma.sign(cert, key, pwd);
-            return Sign.data(os);
+            eFirma.sign Sign = new eFirma.sign();
+            return Sign.data(cert, key, pwd, os);
         }
 
         internal static evidence Sign(byte[] cert, byte[] key, String pwd, string os)
         {
-            eFirma.sign Sign = new eFirma.sign(cert, key, pwd);
-            return Sign.data(os);
+            eFirma.sign Sign = new eFirma.sign();
+            return Sign.data(cert, key, pwd, os);
         }
     }
 }
